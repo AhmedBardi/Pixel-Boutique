@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:1980/',
+        target: 'https://pixelboutique.onrender.com',
         changeOrigin: true,
         secure: false
         // 1. OPTIONAL: Remove '/api' before sending the request to the backend
