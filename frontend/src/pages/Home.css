@@ -1,0 +1,123 @@
+/* Réutilisation des variables de style clair */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+}
+
+.home-page {
+  background-color: var(--bg-main);
+}
+
+/* Disposition en grille pour les 4 éléments */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* À partir des tablettes, on affiche sur 2 colonnes */
+@media (min-width: 768px) {
+  .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* La carte d'introduction prend toute la largeur du haut */
+  .intro-card {
+    grid-column: span 2;
+  }
+}
+
+/* Style de base des blocs (cartes) */
+.home-card {
+  background-color: var(--bg-card);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.home-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.home-card-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Liens sous forme de boutons d'action */
+.card-link-btn {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.card-link-btn:hover {
+  color: var(--primary-hover);
+  transform: translateX(4px);
+}
+
+/* Style de la carte d'authentification */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.auth-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-login {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-login:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-register {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-register:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Petites touches de couleurs thématiques discrètes au survol */
+.console-theme:hover { border-left: 4px solid #00439c; }
+.games-theme:hover { border-left: 4px solid #e60012; }
+.auth-card:hover { border-left: 4px solid #107c10; }

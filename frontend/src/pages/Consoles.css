@@ -1,0 +1,77 @@
+/* --- Arrière-plan Lumineux et Moderne --- */
+body {
+  background-color: #f8fafc; /* Gris très clair et propre (Slate 50) */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.07) 0, transparent 50%), /* Subtile lueur dorée */
+    radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.05) 0, transparent 50%); /* Subtile lueur indigo */
+  background-attachment: fixed;
+}
+
+/* --- Effet de lueur (Glow) au survol des cartes --- */
+.card-gaming {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Changement de la bordure au survol vers une couleur Or Épargnée */
+.card-gaming:hover {
+  border-color: #d4af37 !important; /* Bordure dorée au survol */
+}
+
+/* Lueurs spécifiques adoucies pour fond clair */
+.card-playstation:hover {
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15); /* Halo Bleu doux */
+}
+
+.card-nintendo:hover {
+  box-shadow: 0 15px 30px rgba(239, 68, 68, 0.15); /* Halo Rouge doux */
+}
+
+.card-casques:hover {
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15); /* Halo Vert doux */
+}
+
+/* --- Animation du bouton "Voir le produit" --- */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* --- Personnalisation de la Scrollbar --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

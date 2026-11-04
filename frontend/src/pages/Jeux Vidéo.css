@@ -1,0 +1,172 @@
+/* --- Variables globales pour un thème clair & dynamique --- */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* Couleurs thématiques */
+  --playstation: #00439c;
+  --nintendo: #e60012;
+  --xbox: #107c10;
+  --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+  --btn-hover: #4338ca;
+}
+
+/* --- Style Général --- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.page-container {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding: 4rem 3rem;
+  }
+}
+
+/* --- En-tête --- */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text; /* Pour Chrome, Safari, Edge anciens */
+  background-clip: text;         /* La propriété standard (correction ici) */
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* --- Sections --- */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.console-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Couleurs spécifiques des titres */
+.title-playstation { color: var(--playstation); border-bottom-color: rgba(0, 67, 156, 0.2); }
+.title-nintendo { color: var(--nintendo); border-bottom-color: rgba(230, 0, 18, 0.2); }
+.title-xbox { color: var(--xbox); border-bottom-color: rgba(16, 124, 16, 0.2); }
+
+/* --- Grille et Cartes --- */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.game-card {
+  background-color: var(--bg-card);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.image-container {
+  height: 12rem;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-image {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.game-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-release {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* --- Bouton --- */
+.card-button {
+  margin-top: 1.25rem;
+  width: 100%;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+  background-color: var(--btn-hover);
+}

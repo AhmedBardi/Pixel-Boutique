@@ -1,0 +1,25 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "mern app",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server",
+  "scripts": {
+    "dev": "npx nodemon server",
+    "start": "node server"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.3",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
+

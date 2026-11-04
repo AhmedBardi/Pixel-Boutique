@@ -1,0 +1,108 @@
+/* --- Variables pour l'harmonie du thème clair --- */
+:root {
+  --bg-auth: #f1f5f9;
+  --bg-card-auth: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-field: #cbd5e1;
+  --primary-color: #4f46e5;
+  --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+}
+
+/* --- Conteneur principal (Centrage horizontal et vertical) --- */
+.formLogin {
+  min-height: calc(100vh - 80px); /* S'adapte sous la BarNav */
+  background-color: var(--bg-auth);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Le Formulaire (Boîte Blanche) --- */
+.formLogin form {
+  background-color: var(--bg-card-auth);
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+/* --- Titre --- */
+.auth-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-align: center;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  letter-spacing: -0.03em;
+}
+
+/* --- Champs de saisie (Inputs Bootstrap ré-habillés) --- */
+.formLogin .form-control {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-field);
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Effet interactif quand l'utilisateur clique dans un champ */
+.formLogin .form-control:focus {
+  background-color: #ffffff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+  outline: none;
+}
+
+/* --- Lien de redirection vers le Login --- */
+.formLogin .text-muted {
+  font-size: 0.9rem;
+  color: var(--text-muted) !important;
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+}
+
+.formLogin .text-muted a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.formLogin .text-muted a:hover {
+  text-decoration: underline;
+  color: #4338ca;
+}
+
+/* --- Bouton Soumettre --- */
+.auth-submit-btn {
+  width: 100%;
+  background: var(--primary-gradient) !important;
+  border: none !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 0.6rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.auth-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+}
+
+.auth-submit-btn:active {
+  transform: translateY(0);
+}

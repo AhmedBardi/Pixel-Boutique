@@ -1,0 +1,119 @@
+/* --- Variables pour l'harmonie visuelle --- */
+:root {
+  --bg-navbar: rgba(255, 255, 255, 0.85); /* Fond blanc semi-transparent */
+  --text-nav: #0f172a;
+  --text-nav-hover: #4f46e5;
+  --border-nav: rgba(226, 232, 240, 0.8);
+  --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+}
+
+/* --- Conteneur principal de la Barre de Navigation --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(12px); /* Effet de flou moderne (Glassmorphism) */
+  -webkit-backdrop-filter: blur(12px); /* Compatibilité Safari */
+  border-bottom: 1px solid var(--border-nav);
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo PixelBoutique --- */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.9;
+}
+
+/* --- Liens de Navigation --- */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  font-weight: 600;
+  color: var(--text-nav);
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.navbar-link:hover {
+  color: var(--text-nav-hover);
+}
+
+/* --- Animation de la ligne sous les liens au survol --- */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* --- Bouton Spécial (Ex: Connexion / Espace Membre) --- */
+.navbar-btn {
+  background: var(--primary-gradient);
+  color: #ffffff !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.navbar-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+}
+
+.navbar-btn::after {
+  display: none; /* Enlève la ligne du dessous pour le bouton */
+}
+
+/* --- Responsive : Adaptation Mobile --- */
+@media (max-width: 768px) {
+  .navbar-links {
+    gap: 1rem;
+  }
+  .navbar-link {
+    font-size: 0.875rem;
+  }
+  .navbar-btn {
+    padding: 0.5rem 0.8rem;
+  }
+}
