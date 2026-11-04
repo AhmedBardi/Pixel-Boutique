@@ -22,7 +22,7 @@ app.use("/api/product", require('./routes/prod.routes'))
 // ---------------------------FIN DE PAGE---------------------------
 
 // Port
-const PORT = process.env.PORT || 5000; // Added fallback just in case
+const PORT = process.env.PORT || 4000; // Added fallback just in case
 
 // Start server after DB connection
 const startServer = async () => {
