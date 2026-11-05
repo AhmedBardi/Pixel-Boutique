@@ -1,7 +1,7 @@
 // Import 
 
 import { logout } from "../actions/auth.action"
-import { CURRENT_AUTH, FAIL_AUTH, LOAD_AUTH, SUCCESS_AUTH, LOGOUT_AUTH} from "../actionType/auth.actionType"
+import { CURRENT_AUTH, FAIL_AUTH, LOAD_AUTH, SUCCESS_AUTH, LOGOUT_AUTH} from "./actionType/auth.actionType"
 
 
 
