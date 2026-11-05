@@ -1,8 +1,6 @@
 // Importation 
 
-import { FAIL_PROD, GET_MY_PRODUCT, GET_ONE_PRODUCT, GET_PRODUCT, LOAD_PRODUCT } from "../actionType/prod.actionType"
-
-import { ADD_PRODUCT } from "../actionType/prod.actionType"
+import { ADD_PRODUCT, LOAD_PRODUCT, GET_PRODUCT, FAIL_PROD, GET_MY_PRODUCT } from "../actionType/prod.actionType"
 
 
 
@@ -21,22 +19,22 @@ const prodReducer = (state=InitialState, {type, payload})=>{
 switch (type) {
     case LOAD_PRODUCT: return{...state, isLoadProd:true}
     case GET_PRODUCT:return {
-        ...state, isLoad:false,products:payload
+        ...state, isLoadProd:false,products:payload
     }
     case FAIL_PROD:
-        return {...state,isLoad:false,errors:payload}
+        return {...state,isLoadProd:false,error:payload}
 
     case ADD_PRODUCT:
             return{
                 ...state, 
-                isload:false,
+                isLoadProd:false,
                 products:[...state.products, payload] //Rajouter le nouveau produit 
                 // Dans le tableau 
             }
     case GET_MY_PRODUCT:
         return {
             ...state, 
-            isload:false,
+            isLoadProd:false,
             MyProd:payload
         }
     default:

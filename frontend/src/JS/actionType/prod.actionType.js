@@ -1,4 +1,6 @@
 // Chargement 
+
+
 export const LOAD_PRODUCT = "LOAD_PRODUCT"
 // Success
 export const GET_PRODUCT = "GET_PRODUCT"
@@ -11,5 +13,3 @@ export const DELETE_PRODUCT = "DELETE_PRODUCT"
 
 // Fail 
 export const FAIL_PROD = "FAIL_PROD"
-
-
