@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewProd, getMyprod } from "../JS/actions/prod.actions";
 import ListGame from "../component/ListGame";
 
 function Profile() {
