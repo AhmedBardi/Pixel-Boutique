@@ -19,21 +19,26 @@ function Login() {
     setUserToConnect({ ...userToConnect, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Optionnel : Tu peux ajouter une petite sécurité ici pour éviter 
-    // d'envoyer des données vides à ton action Redux si l'utilisateur clique trop vite.
-    if (!userToConnect.email.trim() || !userToConnect.password.trim()) {
-      alert("Please fill in all fields");
-      return;
-    }
+  const handleLoginSubmit = async (e) => {
+  e.preventDefault();
 
-    dispatch(login({
-      email: userToConnect.email.trim(), 
-      password: userToConnect.password.trim()
-    }, navigate));
-  };
+  // Check if inputs are empty before sending anything to the backend
+  if (!email || !password) {
+    alert("Please enter your login credentials.");
+    return;
+  }
+
+  try {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/login`, {
+      email,
+      password
+    });
+    
+    // Handle successful login (save token, redirect, etc.)
+  } catch (error) {
+    console.error("Login failed", error);
+  }
+};
 
   return (
     <div className='formLogin'>
