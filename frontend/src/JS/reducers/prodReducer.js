@@ -1,8 +1,8 @@
 // Importation 
 
-import { FAIL_PROD, GET_MY_PRODUCT, GET_ONE_PRODUCT, GET_PRODUCT, LOAD_PRODUCT } from "../actionType/prod.actiontype"
+import { FAIL_PROD, GET_MY_PRODUCT, GET_ONE_PRODUCT, GET_PRODUCT, LOAD_PRODUCT } from "../actiontype/prod.actiontype"
 
-import { ADD_PRODUCT } from "../actionType/prod.actiontype"
+import { ADD_PRODUCT } from "../actiontype/prod.actiontype"
 
 
 
