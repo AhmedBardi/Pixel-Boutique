@@ -18,6 +18,11 @@ app.use("/api/auth", require("./routes/auth.routes"));
 
 app.use("/api/product", require('./routes/prod.routes'))
 
+// 2. Configure CORS right after creating 'app' and BEFORE your routes/middleware
+app.use(cors({
+  origin: 'https://pixel-boutique.onrender.com', // Your frontend URL
+  credentials: true
+}));
 
 // ---------------------------FIN DE PAGE---------------------------
 
