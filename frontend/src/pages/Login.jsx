@@ -20,29 +20,27 @@ function Login() {
   };
 
   const handleLoginSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Check if inputs are empty before sending anything to the backend
-  if (!email || !password) {
-    alert("Please enter your login credentials.");
-    return;
-  }
+    const { email, password } = userToConnect;
 
-  try {
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/login`, {
-      email,
-      password
-    });
-    
-    // Handle successful login (save token, redirect, etc.)
-  } catch (error) {
-    console.error("Login failed", error);
-  }
-};
+    // Check if inputs are empty before sending anything
+    if (!email || !password) {
+      alert("Please enter your login credentials.");
+      return;
+    }
+
+    try {
+      // Dispatches your Redux login action (passing credentials and navigate function if handled there)
+      dispatch(login(userToConnect, navigate));
+    } catch (error) {
+      console.error("Login failed", error);
+    }
+  };
 
   return (
     <div className='formLogin'>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleLoginSubmit}>
         <h2 className='m-3'>Login Page</h2>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -52,7 +50,7 @@ function Login() {
             name="email" 
             value={userToConnect.email} 
             onChange={handleChange}
-            required // Ajoute une validation native du navigateur
+            required
           />
         </Form.Group>
 
@@ -63,7 +61,7 @@ function Login() {
             name="password" 
             value={userToConnect.password}
             onChange={handleChange}
-            required // Ajoute une validation native du navigateur
+            required
           />
         </Form.Group>
 
@@ -73,7 +71,6 @@ function Login() {
           </Form.Text>
         </div>
 
-        {/* L'attribut disabled a été supprimé ici */}
         <Button variant="primary" type="submit">
           Login
         </Button>
