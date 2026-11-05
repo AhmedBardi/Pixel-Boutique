@@ -55,18 +55,23 @@ exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        // 1. Fixed the query typo here (changed 'name' to 'email')
+        // 0. Prevent querying with empty fields (fixes the "random profile" bug)
+        if (!email || !password) {
+            return res.status(400).json({ msg: "Email and password are required!" });
+        }
+
+        // 1. Find user by email
         const foundUser = await User.findOne({ email: email });
         
         // 2. Added 'return' to stop execution if user is not found
         if (!foundUser) {
-            return res.status(400).json({ msg: "Bad credentials!&" });
+            return res.status(400).json({ msg: "Bad credentials!" });
         }
         
         // 3. Added 'return' to stop execution if password doesn't match
         const checkpassword = await bcrypt.compare(password, foundUser.password);
         if (!checkpassword) {
-            return res.status(401).json({ msg: "Bad credentials!ç" });
+            return res.status(401).json({ msg: "Bad credentials!" });
         }
         
         // 4. Generate token
