@@ -1,7 +1,8 @@
 // Require import
 const express = require("express");
 require("dotenv").config();
-
+// 1. Import cors
+const cors = require('cors'); 
 
 // instance d'express
 const app = express();
@@ -18,7 +19,7 @@ app.use("/api/auth", require("./routes/auth.routes"));
 
 app.use("/api/product", require('./routes/prod.routes'))
 
-// 2. Configure CORS right after creating 'app' and BEFORE your routes/middleware
+// Configure CORS right after creating 'app' and BEFORE your routes/middleware
 app.use(cors({
   origin: 'https://pixel-boutique.onrender.com', // Your frontend URL
   credentials: true
